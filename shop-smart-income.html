@@ -7,27 +7,159 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Spectral:wght@400;700&display=swap');
-        :root { --gold-color: #D4AC0D; --dark-bg: #111; --medium-bg: #1a1a1a; --light-text: #ccc; --white-text: #fff; }
-        body { margin: 0; padding: 0; font-family: 'Arimo', sans-serif; background-color: var(--dark-bg); color: var(--light-text); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .main-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #000; }
-        .logo img { height: 60px; vertical-align: middle; }
-        .main-nav a { color: var(--white-text); text-decoration: none; margin: 0 15px; font-size: 1rem; font-weight: bold; transition: color 0.3s ease; }
-        .main-nav a:hover, .main-nav a.active { color: var(--gold-color); }
-        .page-header { text-align: center; padding: 60px 20px; background-color: var(--medium-bg); }
-        .page-header h1 { font-family: 'Spectral', serif; font-size: 3rem; color: var(--white-text); margin: 0 0 10px 0; }
-        .page-header p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 60px 0; }
-        .product-card { background-color: var(--medium-bg); border-radius: 12px; overflow: hidden; text-align: center; border: 1px solid #222; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .product-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
-        .product-card img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; background-color: #333; }
-        .product-info { padding: 20px; }
-        .product-info h3 { font-family: 'Spectral', serif; font-size: 1.3rem; color: var(--white-text); margin: 0 0 15px 0; min-height: 60px; }
-        .buy-button { display: inline-block; background-color: var(--gold-color); color: var(--dark-bg); padding: 12px 30px; font-size: 1rem; font-weight: bold; text-decoration: none; border-radius: 8px; transition: background-color 0.3s ease; }
-        .buy-button:hover { background-color: #b8950b; }
-        .main-footer { text-align: center; padding: 40px 20px; background-color: #000; margin-top: 40px; }
-        .main-footer p { margin: 0; }
-        @media (max-width: 768px) { .main-header { flex-direction: column; } .main-nav { margin-top: 15px; } .page-header h1 { font-size: 2.5rem; } }
+        :root { 
+            --gold-color: #D4AC0D; 
+            --dark-bg: #111; 
+            --medium-bg: #1a1a1a; 
+            --light-text: #ccc; 
+            --white-text: #fff; 
+        }
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Arimo', sans-serif; 
+            background-color: var(--dark-bg); 
+            color: var(--light-text); 
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px; 
+        }
+        .main-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 20px 40px; 
+            background-color: #000; 
+        }
+        .logo img { 
+            height: 60px; 
+            vertical-align: middle; 
+        }
+        .main-nav a { 
+            color: var(--white-text); 
+            text-decoration: none; 
+            margin: 0 15px; 
+            font-size: 1rem; 
+            font-weight: bold; 
+            transition: color 0.3s ease; 
+        }
+        .main-nav a:hover, .main-nav a.active { 
+            color: var(--gold-color); 
+        }
+        .page-header { 
+            text-align: center; 
+            padding: 60px 20px; 
+            background-color: var(--medium-bg); 
+        }
+        .page-header h1 { 
+            font-family: 'Spectral', serif; 
+            font-size: 3rem; 
+            color: var(--white-text); 
+            margin: 0 0 10px 0; 
+        }
+        .page-header p { 
+            font-size: 1.1rem; 
+            max-width: 600px; 
+            margin: 0 auto; 
+        }
+        .product-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+            gap: 30px; 
+            padding: 60px 0; 
+        }
+
+        /* --- NEW: Professional Animation on Load --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .product-card { 
+            background-color: var(--medium-bg); 
+            border-radius: 12px; 
+            overflow: hidden; 
+            text-align: center; 
+            border: 1px solid #222; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; 
+            
+            /* Animation properties */
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        /* --- NEW: Enhanced Hover Animation --- */
+        .product-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6); 
+            border-color: var(--gold-color); /* Adds a subtle glow */
+        }
+        .product-card:hover .product-image-wrapper img {
+            transform: scale(1.05); /* Slight zoom on image */
+        }
+
+        /* --- NEW: Image container for better control --- */
+        .product-image-wrapper {
+            background-color: #000; /* Dark background for the image frame */
+            padding: 20px; /* Creates space around the image, making it look smaller */
+        }
+        
+        .product-card img { 
+            width: 100%; 
+            height: auto; 
+            aspect-ratio: 3 / 4; 
+            object-fit: contain; /* Shows the full image without cropping */
+            transition: transform 0.3s ease;
+        }
+
+        .product-info { 
+            padding: 20px; 
+        }
+        .product-info h3 { 
+            font-family: 'Spectral', serif; 
+            font-size: 1.3rem; 
+            color: var(--white-text); 
+            margin: 0 0 15px 0; 
+            min-height: 60px; 
+        }
+        .buy-button { 
+            display: inline-block; 
+            background-color: var(--gold-color); 
+            color: var(--dark-bg); 
+            padding: 12px 30px; 
+            font-size: 1rem; 
+            font-weight: bold; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            transition: background-color 0.3s ease; 
+        }
+        .buy-button:hover { 
+            background-color: #b8950b; 
+        }
+        .main-footer { 
+            text-align: center; 
+            padding: 40px 20px; 
+            background-color: #000; 
+            margin-top: 40px; 
+        }
+        .main-footer p { 
+            margin: 0; 
+        }
+        
+        /* --- Mobile First Adjustments --- */
+        @media (max-width: 768px) { 
+            .main-header { flex-direction: column; } 
+            .main-nav { margin-top: 15px; } 
+            .page-header h1 { font-size: 2.5rem; } 
+        }
+        @media (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: 1fr; /* Ensures one column on small phones */
+                gap: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -51,92 +183,132 @@
 
         <section class="product-grid">
             
+            <!-- Book 1 -->
             <div class="product-card">
-                <img src="images/Digital Marketing Automation for Solopreneurs.png" alt="Digital Marketing Automation for Solopreneurs">
+                <div class="product-image-wrapper">
+                    <img src="images/Digital Marketing Automation for Solopreneurs.png" alt="Digital Marketing Automation for Solopreneurs">
+                </div>
                 <div class="product-info">
                     <h3>Digital Marketing Automation for Solopreneurs</h3>
                     <a href="#" class="buy-button">Buy Now for $6.99</a>
                 </div>
             </div>
 
+            <!-- Book 2 -->
             <div class="product-card">
-                <img src="images/Make Money with Stock Videos and Clips.png" alt="Make Money with Stock Videos and Clips">
+                <div class="product-image-wrapper">
+                    <img src="images/Make Money with Stock Videos and Clips.png" alt="Make Money with Stock Videos and Clips">
+                </div>
                 <div class="product-info">
                     <h3>Make Money with Stock Videos and Clips</h3>
                     <a href="#" class="buy-button">Buy Now for $6.99</a>
                 </div>
             </div>
 
+            <!-- Book 3 -->
             <div class="product-card">
-                <img src="images/Rent Out Your Digital Assets in 2025.png" alt="Rent Out Your Digital Assets in 2025">
+                <div class="product-image-wrapper">
+                    <img src="images/Rent Out Your Digital Assets in 2025.png" alt="Rent Out Your Digital Assets in 2025">
+                </div>
                 <div class="product-info">
                     <h3>Rent Out Your Digital Assets in 2025</h3>
                     <a href="#" class="buy-button">Buy Now for $6.99</a>
                 </div>
             </div>
 
+            <!-- Book 4 -->
             <div class="product-card">
-                <img src="images/Create a Passive Income Newsletter.png" alt="Create a Passive Income Newsletter">
+                <div class="product-image-wrapper">
+                    <img src="images/Create a Passive Income Newsletter.png" alt="Create a Passive Income Newsletter">
+                </div>
                 <div class="product-info">
                     <h3>Create a Passive Income Newsletter</h3>
                     <a href="#" class="buy-button">Buy Now for $6.99</a>
                 </div>
             </div>
 
+            <!-- Book 5 -->
             <div class="product-card">
-                <img src="images/Digital Subscriptions You Can Launch Fast.png" alt="Digital Subscriptions You Can Launch Fast">
+                <div class="product-image-wrapper">
+                    <img src="images/Digital Subscriptions You Can Launch Fast.png" alt="Digital Subscriptions You Can Launch Fast">
+                </div>
                 <div class="product-info">
                     <h3>Digital Subscriptions You Can Launch Fast</h3>
                     <a href="#" class="buy-button">Buy Now for $6.99</a>
                 </div>
             </div>
 
+            <!-- Book 6 -->
             <div class="product-card">
-                <img src="images/YouTube Cash Machine Without filming.png" alt="YouTube Cash Machine Without Filming">
+                <div class="product-image-wrapper">
+                    <img src="images/YouTube Cash Machine Without filming.png" alt="YouTube Cash Machine Without Filming">
+                </div>
                 <div class="product-info">
                     <h3>YouTube Cash Machine Without Filming</h3>
                     <a href="#" class="buy-button">Buy Now for $6.99</a>
                 </div>
             </div>
 
+            <!-- Book 7 -->
             <div class="product-card">
-                <img src="images/Smart Income with Canva Templates.png" alt="Smart Income with Canva Templates">
+                <div class="product-image-wrapper">
+                    <img src="images/Smart Income with Canva Templates.png" alt="Smart Income with Canva Templates">
+                </div>
                 <div class="product-info">
                     <h3>Smart Income with Canva Templates</h3>
                     <a href="#" class="buy-button">Buy Now for $6.99</a>
                 </div>
             </div>
 
+            <!-- Book 8 -->
             <div class="product-card">
-                <img src="images/How to Sell Digital Planners Online.png" alt="How to Sell Digital Planners Online">
+                <div class="product-image-wrapper">
+                    <img src="images/How to Sell Digital Planners Online.png" alt="How to Sell Digital Planners Online">
+                </div>
                 <div class="product-info">
                     <h3>How to Sell Digital Planners Online</h3>
                     <a href="#" class="buy-button">Buy Now for $6.99</a>
                 </div>
             </div>
 
+            <!-- Book 9 -->
             <div class="product-card">
-                <img src="images/Monetize Your Knowledge with ebooks.png" alt="Monetize Your Knowledge with eBooks">
+                <div class="product-image-wrapper">
+                    <img src="images/Monetize Your Knowledge with ebooks.png" alt="Monetize Your Knowledge with eBooks">
+                </div>
                 <div class="product-info">
                     <h3>Monetize Your Knowledge with eBooks</h3>
                     <a href="#" class="buy-button">Buy Now for $6.99</a>
                 </div>
             </div>
 
+            <!-- Book 10 -->
             <div class="product-card">
-                <img src="images/Affiliate Marketing 2025 Passive Income Blueprint.png" alt="Affiliate Marketing 2025: Passive Income Blueprint">
+                <div class="product-image-wrapper">
+                    <img src="images/Affiliate Marketing 2025 Passive Income Blueprint.png" alt="Affiliate Marketing 2025: Passive Income Blueprint">
+                </div>
                 <div class="product-info">
                     <h3>Affiliate Marketing 2025: Passive Income Blueprint</h3>
                     <a href="#" class="buy-button">Buy Now for $6.99</a>
                 </div>
             </div>
 
-             </section>
+        </section>
     </main>
 
     <footer class="main-footer">
         <p>&copy; 2025 METAPROS. All Rights Reserved.</p>
     </footer>
+
+    <!-- This script creates the staggered animation effect -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.07}s`;
+            });
+        });
+    </script>
 
 </body>
 </html>

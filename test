@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>متجر الكتب الإلكترونية التجريبي</title>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #f8f8f8;
+            direction: rtl;
+        }
+        .store-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 24px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
+        }
+        .book-card {
+            background: #fafafa;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            padding: 16px;
+            text-align: center;
+            transition: box-shadow 0.2s;
+        }
+        .book-card:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.13);
+        }
+        .book-cover {
+            width: 100px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 12px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            background: #e4e4e4;
+            display: block;
+        }
+        .book-title {
+            font-size: 1em;
+            color: #222;
+            margin-bottom: 8px;
+            font-weight: bold;
+            min-height: 50px;
+        }
+        .book-price {
+            font-size: 0.95em;
+            color: #008080;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .book-btn {
+            display: inline-block;
+            background: #008080;
+            color: #fff;
+            padding: 7px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: background 0.2s;
+        }
+        .book-btn:hover {
+            background: #005959;
+        }
+    </style>
+</head>
+<body>
+    <div class="store-container">
+        <h1>متجر الكتب الإلكترونية التجريبي</h1>
+        <div class="books-grid">
+            <div class="book-card">
+                <img src="book1.jpg" alt="Digital Marketing Automation for Solopreneurs" class="book-cover">
+                <div class="book-title">Digital Marketing Automation for Solopreneurs</div>
+                <div class="book-price">20 ريال</div>
+                <a href="#" class="book-btn">شراء</a>
+            </div>
+            <div class="book-card">
+                <img src="book2.jpg" alt="Make Money with Stock Videos and Clips" class="book-cover">
+                <div class="book-title">Make Money with Stock Videos and Clips</div>
+                <div class="book-price">18 ريال</div>
+                <a href="#" class="book-btn">شراء</a>
+            </div>
+            <div class="book-card">
+                <img src="book3.jpg" alt="Rent Out Your Digital Assets in 2025" class="book-cover">
+                <div class="book-title">Rent Out Your Digital Assets in 2025</div>
+                <div class="book-price">22 ريال</div>
+                <a href="#" class="book-btn">شراء</a>
+            </div>
+            <div class="book-card">
+                <img src="book4.jpg" alt="Create a Passive Income Newsletter" class="book-cover">
+                <div class="book-title">Create a Passive Income Newsletter</div>
+                <div class="book-price">17 ريال</div>
+                <a href="#" class="book-btn">شراء</a>
+            </div>
+            <div class="book-card">
+                <img src="book5.jpg" alt="Digital Subscriptions You Can Launch Fast" class="book-cover">
+                <div class="book-title">Digital Subscriptions You Can Launch Fast</div>
+                <div class="book-price">16 ريال</div>
+                <a href="#" class="book-btn">شراء</a>
+            </div>
+            <div class="book-card">
+                <img src="book6.jpg" alt="YouTube Cash Machine Without Filming" class="book-cover">
+                <div class="book-title">YouTube Cash Machine Without Filming</div>
+                <div class="book-price">19 ريال</div>
+                <a href="#" class="book-btn">شراء</a>
+            </div>
+            <div class="book-card">
+                <img src="book7.jpg" alt="Smart Income with Canva Templates" class="book-cover">
+                <div class="book-title">Smart Income with Canva Templates</div>
+                <div class="book-price">15 ريال</div>
+                <a href="#" class="book-btn">شراء</a>
+            </div>
+            <div class="book-card">
+                <img src="book8.jpg" alt="How to Sell Digital Planners Online" class="book-cover">
+                <div class="book-title">How to Sell Digital Planners Online</div>
+                <div class="book-price">18 ريال</div>
+                <a href="#" class="book-btn">شراء</a>
+            </div>
+            <div class="book-card">
+                <img src="book9.jpg" alt="Monetize Your Knowledge with eBooks" class="book-cover">
+                <div class="book-title">Monetize Your Knowledge with eBooks</div>
+                <div class="book-price">21 ريال</div>
+                <a href="#" class="book-btn">شراء</a>
+            </div>
+            <div class="book-card">
+                <img src="book10.jpg" alt="Affiliate Marketing 2025: Passive Income Blueprint" class="book-cover">
+                <div class="book-title">Affiliate Marketing 2025: Passive Income Blueprint</div>
+                <div class="book-price">20 ريال</div>
+                <a href="#" class="book-btn">شراء</a>
+            </div>
+            <div class="book-card">
+                <img src="book11.jpg" alt="Dropshipping 2025: Start with No Capital" class="book-cover">
+                <div class="book-title">Dropshipping 2025: Start with No Capital</div>
+                <div class="book-price">23 ريال</div>
+                <a href="#" class="book-btn">شراء</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

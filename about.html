@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About MetaPros</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Spectral:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+        :root { 
+            --gold-color: #D4AC0D; 
+            --dark-bg: #111; 
+            --medium-bg: #1a1a1a; 
+            --light-text: #ccc; 
+            --white-text: #fff; 
+        }
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Arimo', sans-serif; 
+            background-color: var(--dark-bg); 
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+        .container { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 20px; 
+        }
+        .main-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 20px 40px; 
+            background-color: #000; 
+        }
+        .logo img { 
+            height: 60px; 
+            vertical-align: middle; 
+        }
+        .main-nav a { 
+            color: var(--white-text); 
+            text-decoration: none; 
+            margin: 0 15px; 
+            font-size: 1rem; 
+            font-weight: bold; 
+            transition: color 0.3s ease; 
+        }
+        .main-nav a:hover, .main-nav a.active { 
+            color: var(--gold-color); 
+        }
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+        h2, h3, .animated-highlight {
+            font-family: 'Spectral', serif;
+            font-weight: 700;
+            color: var(--gold-color);
+        }
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        p.subtitle {
+            font-family: 'Arimo', sans-serif;
+            color: #ccc;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        .animated-highlight {
+            font-size: 1.3rem;
+            margin-bottom: 50px;
+        }
+        .flex-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            text-align: left;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        .col {
+            flex: 1;
+            min-width: 280px;
+        }
+        h3 {
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+        p {
+            font-family: 'Arimo', sans-serif;
+            font-weight: 400; /* Regular weight for paragraphs */
+            color: #ccc;
+            font-size: 1rem;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 60px auto;
+            max-width: 700px;
+        }
+        .cta {
+            margin-top: 40px;
+        }
+        .cta-button {
+            margin-top: 20px;
+            background-color: var(--gold-color);
+            color: var(--dark-bg);
+            font-weight: bold;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Arimo', sans-serif;
+        }
+        .cta-button:hover {
+            background-color: #b8950b;
+        }
+        .main-footer { 
+            text-align: center; 
+            padding: 40px 20px; 
+            background-color: #000; 
+        }
+        .main-footer p { 
+            margin: 0; 
+        }
+        @media (max-width: 768px) {
+            .flex-row { flex-direction: column; text-align: center; }
+            .col { text-align: center; }
+            .main-header { flex-direction: column; } 
+            .main-nav { margin-top: 15px; } 
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="index.html" class="logo"><img src="logo.png" alt="Metapros Logo"></a>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="bundle.html">Create Your Bundle</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="about.html" class="active">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section data-aos="fade-up">
+            <h2>About MetaPros</h2>
+            <p class="subtitle">Empowering digital minds with tools for self, professional, and financial growth.</p>
+            <div class="animated-highlight" data-aos="zoom-in">
+                Unlock your true potential, one download at a time.
+            </div>
+            <hr data-aos="fade" />
+            <div class="flex-row" data-aos="fade-up" data-aos-delay="100">
+                <div class="col">
+                    <h3>Who We Are</h3>
+                    <p>
+                        We believe that knowledge should be affordable, practical, and instantly accessible, no subscriptions, no fluff, just real value.
+                    </p>
+                </div>
+                <div class="col">
+                    <h3>Our Mission</h3>
+                    <p>
+                        To help individuals around the world unlock their potential through high-quality digital content. We aim to remove barriers to learning by making advanced knowledge available in a simple, fast, and secure way.
+                    </p>
+                </div>
+            </div>
+            <hr data-aos="fade" />
+            <div data-aos="fade-up" data-aos-delay="200">
+                <h3>Why MetaPros?</h3>
+                <p>
+                    Curated digital products only, no clutter.<br>
+                    Instant downloads with lifetime access.<br>
+                    Secure checkout with support.<br>
+                    Built by creators, for creators.
+                </p>
+            </div>
+            <hr data-aos="fade" />
+            <div class="cta" data-aos="fade-up" data-aos-delay="400">
+                <h3>Ready to explore?</h3>
+                <a class="cta-button" href="shop.html">Visit Our Store</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 METAPROS. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>

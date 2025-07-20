@@ -1,74 +1,269 @@
-<div class="book-store">
-  <div class="book">
-    <img src="images/AI-Automation-for-B.jpg" alt="AI Automation for B...">
-    <p>AI Automation for B...</p>
-  </div>
-  <div class="book">
-    <img src="images/AI-To-Boost-Your-P.jpg" alt="AI To Boost Your P...">
-    <p>AI To Boost Your P...</p>
-  </div>
-  <div class="book">
-    <img src="images/AI-Powered-Etsy-Sh.jpg" alt="AI-Powered Etsy Sh...">
-    <p>AI-Powered Etsy Sh...</p>
-  </div>
-  <div class="book">
-    <img src="images/Affiliate-Marketing.jpg" alt="Affiliate Marketing ...">
-    <p>Affiliate Marketing ...</p>
-  </div>
-  <div class="book">
-    <img src="images/Create-a-Passive-In.jpg" alt="Create a Passive In...">
-    <p>Create a Passive In...</p>
-  </div>
-  <div class="book">
-    <img src="images/Create-and-Sell-Onli.jpg" alt="Create and Sell Onli...">
-    <p>Create and Sell Onli...</p>
-  </div>
-  <div class="book">
-    <img src="images/Digital-Marketing-A.jpg" alt="Digital Marketing A...">
-    <p>Digital Marketing A...</p>
-  </div>
-  <div class="book">
-    <img src="images/Digital-Products-Yo.jpg" alt="Digital Products Yo...">
-    <p>Digital Products Yo...</p>
-  </div>
-  <div class="book">
-    <img src="images/Digital-Subscription.jpg" alt="Digital Subscription...">
-    <p>Digital Subscription...</p>
-  </div>
-  <div class="book">
-    <img src="images/Dropshipping-2025.jpg" alt="Dropshipping 2025 ...">
-    <p>Dropshipping 2025 ...</p>
-  </div>
-  <div class="book">
-    <img src="images/Dropshipping-Sell.jpg" alt="Dropshipping Sell ...">
-    <p>Dropshipping Sell ...</p>
-  </div>
-  <div class="book">
-    <img src="images/E-Commerce-Strategy.jpg" alt="E-Commerce Strategy ...">
-    <p>E-Commerce Strategy ...</p>
-  </div>
-  <div class="book">
-    <img src="images/Find-the-Best-Produ.jpg" alt="Find the Best Produ...">
-    <p>Find the Best Produ...</p>
-  </div>
-  <div class="book">
-    <img src="images/How-To-Start-A-Dro.jpg" alt="How To Start A Dro...">
-    <p>How To Start A Dro...</p>
-  </div>
-  <div class="book">
-    <img src="images/How-to-Achieve-Pas.jpg" alt="How to Achieve Pa...">
-    <p>How to Achieve Pa...</p>
-  </div>
-  <div class="book">
-    <img src="images/How-to-Sell-Digital.jpg" alt="How to Sell Digital ...">
-    <p>How to Sell Digital ...</p>
-  </div>
-  <div class="book">
-    <img src="images/Make-Money-with-S.jpg" alt="Make Money with S...">
-    <p>Make Money with S...</p>
-  </div>
-  <div class="book">
-    <img src="images/Marketing-Dropserv.jpg" alt="Marketing Dropserv...">
-    <p>Marketing Dropserv...</p>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shop: Smart Income - Metapros</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Spectral:wght@400;700&display=swap');
+
+        :root {
+            --gold-color: #D4AC0D;
+            --dark-bg: #111;
+            --medium-bg: #1a1a1a;
+            --light-text: #ccc;
+            --white-text: #fff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arimo', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header Navigation (Consistent with Home Page) --- */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #000;
+        }
+
+        .logo img {
+            height: 60px;
+            vertical-align: middle;
+        }
+
+        .main-nav a {
+            color: var(--white-text);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a:hover, .main-nav a.active {
+            color: var(--gold-color);
+        }
+
+        /* --- Page Header --- */
+        .page-header {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: var(--medium-bg);
+        }
+
+        .page-header h1 {
+            font-family: 'Spectral', serif;
+            font-size: 3rem;
+            color: var(--white-text);
+            margin: 0 0 10px 0;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- Product Grid --- */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 60px 0;
+        }
+
+        /* --- Product Card Design --- */
+        .product-card {
+            background-color: var(--medium-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            border: 1px solid #222;
+            
+            /* This is the special animation! */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px); /* Lifts the card up */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3 / 4; /* Ensures all images have the same shape */
+            object-fit: cover;
+            background-color: #333; /* Placeholder background */
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-family: 'Spectral', serif;
+            font-size: 1.3rem;
+            color: var(--white-text);
+            margin: 0 0 15px 0;
+            min-height: 60px; /* Ensures titles of different lengths align */
+        }
+
+        .buy-button {
+            display: inline-block;
+            background-color: var(--gold-color);
+            color: var(--dark-bg);
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background-color: #b8950b;
+        }
+
+        /* --- Footer --- */
+        .main-footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #000;
+            margin-top: 40px;
+        }
+        
+        .main-footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .main-header { flex-direction: column; }
+            .main-nav { margin-top: 15px; }
+            .page-header h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="index.html" class="logo"><img src="logo.png" alt="Metapros Logo"></a>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="shop-smart-income.html" class="active">Shop</a>
+            <a href="bundle.html">Create Your Bundle</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page-header">
+            <h1>Smart Income Library</h1>
+            <p>Expert guides to help you build and scale your digital revenue streams in 2025.</p>
+        </section>
+
+        <section class="product-grid">
+            
+            <div class="product-card">
+                <img src="images/placeholder.png" alt="Digital Marketing Automation for Solopreneurs">
+                <div class="product-info">
+                    <h3>Digital Marketing Automation for Solopreneurs</h3>
+                    <a href="#" class="buy-button">Buy Now for $6.99</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/placeholder.png" alt="Make Money with Stock Videos and Clips">
+                <div class="product-info">
+                    <h3>Make Money with Stock Videos and Clips</h3>
+                    <a href="#" class="buy-button">Buy Now for $6.99</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/placeholder.png" alt="Rent Out Your Digital Assets in 2025">
+                <div class="product-info">
+                    <h3>Rent Out Your Digital Assets in 2025</h3>
+                    <a href="#" class="buy-button">Buy Now for $6.99</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/placeholder.png" alt="Create a Passive Income Newsletter">
+                <div class="product-info">
+                    <h3>Create a Passive Income Newsletter</h3>
+                    <a href="#" class="buy-button">Buy Now for $6.99</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/placeholder.png" alt="Digital Subscriptions You Can Launch Fast">
+                <div class="product-info">
+                    <h3>Digital Subscriptions You Can Launch Fast</h3>
+                    <a href="#" class="buy-button">Buy Now for $6.99</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/placeholder.png" alt="YouTube Cash Machine Without Filming">
+                <div class="product-info">
+                    <h3>YouTube Cash Machine Without Filming</h3>
+                    <a href="#" class="buy-button">Buy Now for $6.99</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/placeholder.png" alt="Smart Income with Canva Templates">
+                <div class="product-info">
+                    <h3>Smart Income with Canva Templates</h3>
+                    <a href="#" class="buy-button">Buy Now for $6.99</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/placeholder.png" alt="How to Sell Digital Planners Online">
+                <div class="product-info">
+                    <h3>How to Sell Digital Planners Online</h3>
+                    <a href="#" class="buy-button">Buy Now for $6.99</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/placeholder.png" alt="Monetize Your Knowledge with eBooks">
+                <div class="product-info">
+                    <h3>Monetize Your Knowledge with eBooks</h3>
+                    <a href="#" class="buy-button">Buy Now for $6.99</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/placeholder.png" alt="Affiliate Marketing 2025: Passive Income Blueprint">
+                <div class="product-info">
+                    <h3>Affiliate Marketing 2025: Passive Income Blueprint</h3>
+                    <a href="#" class="buy-button">Buy Now for $6.99</a>
+                </div>
+            </div>
+
+            </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 METAPROS. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

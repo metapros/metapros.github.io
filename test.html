@@ -7,154 +7,27 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Spectral:wght@400;700&display=swap');
-
-        :root {
-            --gold-color: #D4AC0D;
-            --dark-bg: #111;
-            --medium-bg: #1a1a1a;
-            --light-text: #ccc;
-            --white-text: #fff;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arimo', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--light-text);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* --- Header Navigation (Consistent with Home Page) --- */
-        .main-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            background-color: #000;
-        }
-
-        .logo img {
-            height: 60px;
-            vertical-align: middle;
-        }
-
-        .main-nav a {
-            color: var(--white-text);
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1rem;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .main-nav a:hover, .main-nav a.active {
-            color: var(--gold-color);
-        }
-
-        /* --- Page Header --- */
-        .page-header {
-            text-align: center;
-            padding: 60px 20px;
-            background-color: var(--medium-bg);
-        }
-
-        .page-header h1 {
-            font-family: 'Spectral', serif;
-            font-size: 3rem;
-            color: var(--white-text);
-            margin: 0 0 10px 0;
-        }
-
-        .page-header p {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* --- Product Grid --- */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            padding: 60px 0;
-        }
-
-        /* --- Product Card Design --- */
-        .product-card {
-            background-color: var(--medium-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            text-align: center;
-            border: 1px solid #222;
-            
-            /* This is the special animation! */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px); /* Lifts the card up */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .product-card img {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 3 / 4; /* Ensures all images have the same shape */
-            object-fit: cover;
-            background-color: #333; /* Placeholder background */
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-info h3 {
-            font-family: 'Spectral', serif;
-            font-size: 1.3rem;
-            color: var(--white-text);
-            margin: 0 0 15px 0;
-            min-height: 60px; /* Ensures titles of different lengths align */
-        }
-
-        .buy-button {
-            display: inline-block;
-            background-color: var(--gold-color);
-            color: var(--dark-bg);
-            padding: 12px 30px;
-            font-size: 1rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-        }
-
-        .buy-button:hover {
-            background-color: #b8950b;
-        }
-
-        /* --- Footer --- */
-        .main-footer {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #000;
-            margin-top: 40px;
-        }
-        
-        .main-footer p {
-            margin: 0;
-        }
-
-        @media (max-width: 768px) {
-            .main-header { flex-direction: column; }
-            .main-nav { margin-top: 15px; }
-            .page-header h1 { font-size: 2.5rem; }
-        }
+        :root { --gold-color: #D4AC0D; --dark-bg: #111; --medium-bg: #1a1a1a; --light-text: #ccc; --white-text: #fff; }
+        body { margin: 0; padding: 0; font-family: 'Arimo', sans-serif; background-color: var(--dark-bg); color: var(--light-text); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .main-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #000; }
+        .logo img { height: 60px; vertical-align: middle; }
+        .main-nav a { color: var(--white-text); text-decoration: none; margin: 0 15px; font-size: 1rem; font-weight: bold; transition: color 0.3s ease; }
+        .main-nav a:hover, .main-nav a.active { color: var(--gold-color); }
+        .page-header { text-align: center; padding: 60px 20px; background-color: var(--medium-bg); }
+        .page-header h1 { font-family: 'Spectral', serif; font-size: 3rem; color: var(--white-text); margin: 0 0 10px 0; }
+        .page-header p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 60px 0; }
+        .product-card { background-color: var(--medium-bg); border-radius: 12px; overflow: hidden; text-align: center; border: 1px solid #222; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
+        .product-card img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; background-color: #333; }
+        .product-info { padding: 20px; }
+        .product-info h3 { font-family: 'Spectral', serif; font-size: 1.3rem; color: var(--white-text); margin: 0 0 15px 0; min-height: 60px; }
+        .buy-button { display: inline-block; background-color: var(--gold-color); color: var(--dark-bg); padding: 12px 30px; font-size: 1rem; font-weight: bold; text-decoration: none; border-radius: 8px; transition: background-color 0.3s ease; }
+        .buy-button:hover { background-color: #b8950b; }
+        .main-footer { text-align: center; padding: 40px 20px; background-color: #000; margin-top: 40px; }
+        .main-footer p { margin: 0; }
+        @media (max-width: 768px) { .main-header { flex-direction: column; } .main-nav { margin-top: 15px; } .page-header h1 { font-size: 2.5rem; } }
     </style>
 </head>
 <body>
@@ -179,7 +52,7 @@
         <section class="product-grid">
             
             <div class="product-card">
-                <img src="images/placeholder.png" alt="Digital Marketing Automation for Solopreneurs">
+                <img src="images/Digital Marketing Automation for Solopreneurs.png" alt="Digital Marketing Automation for Solopreneurs">
                 <div class="product-info">
                     <h3>Digital Marketing Automation for Solopreneurs</h3>
                     <a href="#" class="buy-button">Buy Now for $6.99</a>
@@ -187,7 +60,7 @@
             </div>
 
             <div class="product-card">
-                <img src="images/placeholder.png" alt="Make Money with Stock Videos and Clips">
+                <img src="images/Make Money with Stock Videos and Clips.png" alt="Make Money with Stock Videos and Clips">
                 <div class="product-info">
                     <h3>Make Money with Stock Videos and Clips</h3>
                     <a href="#" class="buy-button">Buy Now for $6.99</a>
@@ -195,7 +68,7 @@
             </div>
 
             <div class="product-card">
-                <img src="images/placeholder.png" alt="Rent Out Your Digital Assets in 2025">
+                <img src="images/Rent Out Your Digital Assets in 2025.png" alt="Rent Out Your Digital Assets in 2025">
                 <div class="product-info">
                     <h3>Rent Out Your Digital Assets in 2025</h3>
                     <a href="#" class="buy-button">Buy Now for $6.99</a>
@@ -203,7 +76,7 @@
             </div>
 
             <div class="product-card">
-                <img src="images/placeholder.png" alt="Create a Passive Income Newsletter">
+                <img src="images/Create a Passive Income Newsletter.png" alt="Create a Passive Income Newsletter">
                 <div class="product-info">
                     <h3>Create a Passive Income Newsletter</h3>
                     <a href="#" class="buy-button">Buy Now for $6.99</a>
@@ -211,7 +84,7 @@
             </div>
 
             <div class="product-card">
-                <img src="images/placeholder.png" alt="Digital Subscriptions You Can Launch Fast">
+                <img src="images/Digital Subscriptions You Can Launch Fast.png" alt="Digital Subscriptions You Can Launch Fast">
                 <div class="product-info">
                     <h3>Digital Subscriptions You Can Launch Fast</h3>
                     <a href="#" class="buy-button">Buy Now for $6.99</a>
@@ -219,7 +92,7 @@
             </div>
 
             <div class="product-card">
-                <img src="images/placeholder.png" alt="YouTube Cash Machine Without Filming">
+                <img src="images/YouTube Cash Machine Without filming.png" alt="YouTube Cash Machine Without Filming">
                 <div class="product-info">
                     <h3>YouTube Cash Machine Without Filming</h3>
                     <a href="#" class="buy-button">Buy Now for $6.99</a>
@@ -227,7 +100,7 @@
             </div>
 
             <div class="product-card">
-                <img src="images/placeholder.png" alt="Smart Income with Canva Templates">
+                <img src="images/Smart Income with Canva Templates.png" alt="Smart Income with Canva Templates">
                 <div class="product-info">
                     <h3>Smart Income with Canva Templates</h3>
                     <a href="#" class="buy-button">Buy Now for $6.99</a>
@@ -235,7 +108,7 @@
             </div>
 
             <div class="product-card">
-                <img src="images/placeholder.png" alt="How to Sell Digital Planners Online">
+                <img src="images/How to Sell Digital Planners Online.png" alt="How to Sell Digital Planners Online">
                 <div class="product-info">
                     <h3>How to Sell Digital Planners Online</h3>
                     <a href="#" class="buy-button">Buy Now for $6.99</a>
@@ -243,7 +116,7 @@
             </div>
 
             <div class="product-card">
-                <img src="images/placeholder.png" alt="Monetize Your Knowledge with eBooks">
+                <img src="images/Monetize Your Knowledge with ebooks.png" alt="Monetize Your Knowledge with eBooks">
                 <div class="product-info">
                     <h3>Monetize Your Knowledge with eBooks</h3>
                     <a href="#" class="buy-button">Buy Now for $6.99</a>
@@ -251,14 +124,14 @@
             </div>
 
             <div class="product-card">
-                <img src="images/placeholder.png" alt="Affiliate Marketing 2025: Passive Income Blueprint">
+                <img src="images/Affiliate Marketing 2025 Passive Income Blueprint.png" alt="Affiliate Marketing 2025: Passive Income Blueprint">
                 <div class="product-info">
                     <h3>Affiliate Marketing 2025: Passive Income Blueprint</h3>
                     <a href="#" class="buy-button">Buy Now for $6.99</a>
                 </div>
             </div>
 
-            </section>
+             </section>
     </main>
 
     <footer class="main-footer">

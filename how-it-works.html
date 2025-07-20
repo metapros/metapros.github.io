@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>How It Works - Metapros</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Spectral:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root { 
+            --gold-color: #D4AC0D; 
+            --dark-bg: #111; 
+            --medium-bg: #1a1a1a; 
+            --light-text: #ccc; 
+            --white-text: #fff; 
+        }
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Arimo', sans-serif; 
+            background-color: var(--dark-bg); 
+            color: var(--light-text);
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px; 
+        }
+        .main-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 20px 40px; 
+            background-color: #000; 
+        }
+        .logo img { 
+            height: 60px; 
+            vertical-align: middle; 
+        }
+        .main-nav a { 
+            color: var(--white-text); 
+            text-decoration: none; 
+            margin: 0 15px; 
+            font-size: 1rem; 
+            font-weight: bold; 
+            transition: color 0.3s ease; 
+        }
+        .main-nav a:hover, .main-nav a.active { 
+            color: var(--gold-color); 
+        }
+        
+        /* Page Specific Styles */
+        .page-content {
+            padding: 60px 20px;
+        }
+        h1, h2, h3 {
+            font-family: 'Spectral', serif;
+            font-weight: 700;
+            color: var(--gold-color);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-top: 1rem;
+        }
+        p.subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+            color: var(--light-text);
+        }
+        .steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .step-item {
+            text-align: center;
+            margin: 2rem;
+            max-width: 220px;
+        }
+        .step-item img {
+            width: 100px;
+            height: 100px;
+            filter: invert(85%) sepia(25%) saturate(1500%) hue-rotate(350deg) brightness(100%) contrast(95%);
+        }
+        .step-item h3 {
+            margin-top: 1rem;
+            font-size: 1.5rem;
+        }
+        .step-item p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .divider {
+            width: 80%;
+            height: 1px;
+            background-color: #333;
+            margin: 4rem auto;
+        }
+        .footer-cta {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .footer-cta h2 {
+            margin-bottom: 0.5rem;
+        }
+        .footer-cta a {
+            color: var(--gold-color);
+            text-decoration: underline;
+            font-weight: bold;
+            font-family: 'Spectral', serif;
+        }
+        .main-footer { 
+            text-align: center; 
+            padding: 40px 20px; 
+            background-color: #000; 
+        }
+        .main-footer p { 
+            margin: 0; 
+        }
+        @media (max-width: 768px) {
+            .main-header { flex-direction: column; } 
+            .main-nav { margin-top: 15px; } 
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="index.html" class="logo"><img src="logo.png" alt="Metapros Logo"></a>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="bundle.html">Create Your Bundle</a>
+            <a href="how-it-works.html" class="active">How It Works</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container page-content">
+        <h1 data-aos="fade-up">How MetaPros Works</h1>
+        <p class="subtitle" data-aos="fade-up" data-aos-delay="100">
+            Simple. Fast. Secure. Discover how you can get premium digital products in just a few clicks.
+        </p>
+
+        <div class="steps">
+            <div class="step-item" data-aos="zoom-in" data-aos-delay="200">
+                <img src="https://img.icons8.com/ios/100/open-book--v1.png" alt="Browse Products">
+                <h3>Step 1: Browse</h3>
+                <p>Explore our digital library by category and choose the resources that fit your needs.</p>
+            </div>
+
+            <div class="step-item" data-aos="zoom-in" data-aos-delay="300">
+                <img src="https://img.icons8.com/ios/100/bank-card-back-side.png" alt="Secure Checkout">
+                <h3>Step 2: Checkout</h3>
+                <p>Pay securely using PayPal. We will contact you to finalize the order and payment.</p>
+            </div>
+
+            <div class="step-item" data-aos="zoom-in" data-aos-delay="400">
+                <img src="https://img.icons8.com/ios/100/download--v1.png" alt="Instant Access">
+                <h3>Step 3: Access</h3>
+                <p>Once payment is complete, you'll receive your digital products directly via email.</p>
+            </div>
+
+            <div class="step-item" data-aos="zoom-in" data-aos-delay="500">
+                <img src="https://img.icons8.com/ios/100/rocket--v1.png" alt="Learn & Grow">
+                <h3>Step 4: Grow</h3>
+                <p>Start reading, applying the knowledge, and leveling up your skills at your own pace.</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="footer-cta" data-aos="fade-up">
+            <h2>Still have questions?</h2>
+            <p>
+                Check our <a href="#">FAQ</a> section or contact us directly.
+            </p>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 METAPROS. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
+</body>
+</html>

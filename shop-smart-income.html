@@ -74,7 +74,6 @@
             padding: 60px 0; 
         }
 
-        /* --- NEW: Page Load Animation --- */
         @keyframes fadeInPage {
             to { opacity: 1; }
         }
@@ -101,7 +100,6 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7); 
             border-color: var(--gold-color);
         }
-        /* --- NEW: Button appears on hover --- */
         .product-card .view-button {
             opacity: 0;
             transform: translateY(10px);
@@ -112,9 +110,10 @@
             transform: translateY(0);
         }
         
+        /* --- MODIFIED: Image wrapper for LARGER images --- */
         .product-image-wrapper {
             background-color: var(--image-bg);
-            padding: 20px;
+            padding: 20px; /* Reduced padding to make image larger */
             box-sizing: border-box;
             flex-shrink: 0;
         }
@@ -131,9 +130,10 @@
             justify-content: space-between;
             flex-grow: 1;
         }
+        /* --- MODIFIED: Title font size is smaller --- */
         .product-info h3 { 
             font-family: 'Spectral', serif; 
-            font-size: 1.2rem;
+            font-size: 1.1rem; /* Reduced font size */
             color: var(--white-text); 
             margin: 0 0 15px 0; 
             flex-grow: 1;
@@ -158,7 +158,6 @@
             margin: 0; 
         }
         
-        /* --- Mobile First Adjustments --- */
         @media (max-width: 700px) {
             .product-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
         }
@@ -190,6 +189,7 @@
 
         <section class="product-grid">
             
+            <!-- Book si-01.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-01.jpg" alt="Affiliate Marketing 2025">
@@ -200,6 +200,7 @@
                 </div>
             </div>
 
+            <!-- Book si-02.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-02.jpg" alt="AI Automation for Business Growth">
@@ -210,6 +211,7 @@
                 </div>
             </div>
 
+            <!-- Book si-03.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-03.jpg" alt="AI To Boost Your Personal Income">
@@ -220,6 +222,7 @@
                 </div>
             </div>
 
+            <!-- Book si-04.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-04.jpg" alt="AI-Powered Etsy Shop">
@@ -230,6 +233,7 @@
                 </div>
             </div>
 
+            <!-- Book si-05.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-05.jpg" alt="Create a Passive Income Newsletter">
@@ -240,6 +244,7 @@
                 </div>
             </div>
 
+            <!-- Book si-06.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-06.jpg" alt="Create and Sell Online Courses in 2025">
@@ -250,6 +255,7 @@
                 </div>
             </div>
 
+            <!-- Book si-07.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-07.jpg" alt="Digital Marketing Automation for Solopreneurs">
@@ -260,6 +266,7 @@
                 </div>
             </div>
 
+            <!-- Book si-08.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-08.jpg" alt="Digital Products You Can Create in a Day">
@@ -270,6 +277,7 @@
                 </div>
             </div>
 
+            <!-- Book si-09.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-09.jpg" alt="Digital Subscriptions You Can Launch Fast">
@@ -280,6 +288,7 @@
                 </div>
             </div>
 
+            <!-- Book si-010.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-010.jpg" alt="Dropservicing: Sell Services Easily">
@@ -290,6 +299,7 @@
                 </div>
             </div>
 
+            <!-- Book si-011.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-011.jpg" alt="Dropshipping 2025: Start with No Capital">
@@ -300,6 +310,7 @@
                 </div>
             </div>
 
+            <!-- Book si-012.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-012.jpg" alt="E-Commerce: Strategies for 2025">
@@ -310,6 +321,7 @@
                 </div>
             </div>
 
+            <!-- Book si-013.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-013.jpg" alt="Find the Best Products for Dropshipping Success">
@@ -320,6 +332,7 @@
                 </div>
             </div>
 
+            <!-- Book si-014.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-014.jpg" alt="How to Achieve Passive or Extra Income Online">
@@ -330,6 +343,7 @@
                 </div>
             </div>
 
+            <!-- Book si-015.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-015.jpg" alt="How to Sell Digital Planners Online">
@@ -340,6 +354,7 @@
                 </div>
             </div>
 
+            <!-- Book si-016.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-016.jpg" alt="How To Start A Dropservicing Business In 2025">
@@ -350,6 +365,7 @@
                 </div>
             </div>
 
+            <!-- Book si-017.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-017.jpg" alt="Make Money with Stock Videos and Clips">
@@ -360,6 +376,7 @@
                 </div>
             </div>
 
+            <!-- Book si-018.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-018.jpg" alt="Marketing Dropservicing Services Successfully">
@@ -370,6 +387,7 @@
                 </div>
             </div>
 
+            <!-- Book si-019.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-019.jpg" alt="Monetize Your Knowledge with eBooks">
@@ -380,6 +398,7 @@
                 </div>
             </div>
 
+            <!-- Book si-020.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-020.jpg" alt="Passive Income with Modern Tools">
@@ -390,6 +409,7 @@
                 </div>
             </div>
 
+            <!-- Book si-021.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-021.jpg" alt="Print on Demand Without Design Skills">
@@ -400,6 +420,7 @@
                 </div>
             </div>
 
+            <!-- Book si-022.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-022.jpg" alt="Rent Out Your Digital Assets in 2025">
@@ -410,6 +431,7 @@
                 </div>
             </div>
 
+            <!-- Book si-023.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-023.jpg" alt="Sell Notion Templates for Profit">
@@ -420,6 +442,7 @@
                 </div>
             </div>
 
+            <!-- Book si-024.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-024.jpg" alt="Smart Income with Canva Templates">
@@ -430,6 +453,7 @@
                 </div>
             </div>
 
+            <!-- Book si-025.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-025.jpg" alt="The Rise of AI Side Hustles">
@@ -440,6 +464,7 @@
                 </div>
             </div>
 
+            <!-- Book si-026.jpg -->
             <div class="product-card">
                 <div class="product-image-wrapper">
                     <img src="images1/si-026.jpg" alt="YouTube Cash Machine Without Filming">

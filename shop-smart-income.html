@@ -93,27 +93,23 @@
         .product-card:hover .product-image-wrapper img {
             transform: scale(1.05);
         }
-        
-        /* --- MODIFIED: Image wrapper for LARGER, fully visible images --- */
         .product-image-wrapper {
             background-color: var(--image-bg);
-            padding: 20px; /* Reduced padding to make image larger */
+            padding: 20px;
             box-sizing: border-box;
         }
         .product-card img { 
             width: 100%; 
-            height: 320px; /* Adjusted height for consistency */
+            height: 320px;
             object-fit: contain; 
             transition: transform 0.3s ease;
         }
-
         .product-info { 
             padding: 20px; 
         }
-        /* --- MODIFIED: Font size of book titles made slightly smaller --- */
         .product-info h3 { 
             font-family: 'Spectral', serif; 
-            font-size: 1.1rem; /* Reduced font size */
+            font-size: 1.1rem;
             color: var(--white-text); 
             margin: 0 0 15px 0; 
             height: 50px; 
@@ -266,4 +262,31 @@
                 </div>
             </div>
 
-            <
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="images/si-10.png" alt="Affiliate Marketing 2025: Passive Income Blueprint">
+                </div>
+                <div class="product-info">
+                    <h3>Affiliate Marketing 2025: Passive Income Blueprint</h3>
+                    <a href="#" class="buy-button">Buy Now for $6.99</a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 METAPROS. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.07}s`;
+            });
+        });
+    </script>
+
+</body>
+</html>

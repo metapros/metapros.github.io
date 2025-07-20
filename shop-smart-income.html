@@ -13,6 +13,7 @@
             --medium-bg: #1a1a1a; 
             --light-text: #ccc; 
             --white-text: #fff; 
+            --image-bg: #131211; /* New background color for images */
         }
         body { 
             margin: 0; 
@@ -100,7 +101,7 @@
 
         /* --- MODIFIED: Image wrapper for smaller, fully visible images --- */
         .product-image-wrapper {
-            background-color: #000;
+            background-color: var(--image-bg); /* Using the new color */
             padding: 30px; /* Increased padding to make image smaller */
             box-sizing: border-box;
         }

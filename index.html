@@ -7,33 +7,141 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Spectral:wght@400;700&display=swap');
-        :root { --gold-color: #D4AC0D; --dark-bg: #111; --medium-bg: #1a1a1a; --light-text: #ccc; --white-text: #fff; }
-        body { margin: 0; padding: 0; font-family: 'Arimo', sans-serif; background-color: var(--dark-bg); color: var(--light-text); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .main-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #000; }
-        .logo img { height: 60px; vertical-align: middle; }
-        .main-nav a { color: var(--white-text); text-decoration: none; margin: 0 15px; font-size: 1rem; font-weight: bold; transition: color 0.3s ease; }
-        .main-nav a:hover, .main-nav a.active { color: var(--gold-color); }
-        .hero { text-align: center; padding: 100px 20px; background-color: var(--medium-bg); }
-        .hero h1 { font-family: 'Spectral', serif; font-size: 3.5rem; color: var(--white-text); margin: 0 0 15px 0; }
-        .hero h1 span { color: var(--gold-color); }
-        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px auto; line-height: 1.6; }
-        .cta-button { display: inline-block; background-color: var(--gold-color); color: var(--dark-bg); padding: 15px 35px; font-size: 1.2rem; font-weight: bold; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; }
-        .cta-button:hover { background-color: #b8950b; transform: scale(1.05); }
-        .section { padding: 80px 20px; text-align: center; }
-        .section-title { font-family: 'Spectral', serif; font-size: 2.5rem; color: var(--white-text); margin-bottom: 40px; }
-        .value-props-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 900px; margin: 0 auto; }
-        .value-prop { background-color: var(--medium-bg); padding: 30px; border-radius: 12px; }
-        .value-prop h3 { font-family: 'Spectral', serif; font-size: 1.5rem; color: var(--gold-color); margin-top: 0; }
-        .how-it-works { background-color: var(--medium-bg); }
-        .final-cta h2 { font-size: 2.5rem; color: var(--white-text); }
-        .final-cta p { font-size: 1.1rem; margin-bottom: 30px; }
-        .main-footer { text-align: center; padding: 40px 20px; background-color: #000; margin-top: 60px; }
-        .main-footer p { margin: 0; color: var(--light-text); }
-        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .main-header { flex-direction: column; } .main-nav { margin-top: 15px; } .main-nav a { margin: 0 10px; } }
+        :root {
+            --gold-color: #D4AC0D;
+            --dark-bg: #111;
+            --medium-bg: #1a1a1a;
+            --light-text: #ccc;
+            --white-text: #fff;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arimo', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #000;
+        }
+        .logo img {
+            height: 60px;
+            vertical-align: middle;
+        }
+        .main-nav a {
+            color: var(--white-text);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .main-nav a:hover, .main-nav a.active {
+            color: var(--gold-color);
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background-color: var(--medium-bg);
+        }
+        .hero h1 {
+            font-family: 'Spectral', serif;
+            font-size: 3.5rem;
+            color: var(--white-text);
+            margin: 0 0 15px 0;
+        }
+        .hero h1 span {
+            color: var(--gold-color);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            line-height: 1.6;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--gold-color);
+            color: var(--dark-bg);
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #b8950b;
+            transform: scale(1.05);
+        }
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .section-title {
+            font-family: 'Spectral', serif;
+            font-size: 2.5rem;
+            color: var(--white-text);
+            margin-bottom: 40px;
+        }
+        .value-props-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .value-prop {
+            background-color: var(--medium-bg);
+            padding: 30px;
+            border-radius: 12px;
+        }
+        .value-prop h3 {
+            font-family: 'Spectral', serif;
+            font-size: 1.5rem;
+            color: var(--gold-color);
+            margin-top: 0;
+        }
+        .how-it-works {
+            background-color: var(--medium-bg);
+        }
+        .final-cta h2 {
+             font-size: 2.5rem;
+             color: var(--white-text);
+        }
+        .final-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        .main-footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #000;
+            margin-top: 60px;
+        }
+        .main-footer p {
+            margin: 0;
+            color: var(--light-text);
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .main-header { flex-direction: column; }
+            .main-nav { margin-top: 15px; }
+            .main-nav a { margin: 0 10px; }
+        }
     </style>
 </head>
 <body>
+
     <header class="main-header">
         <a href="index.html" class="logo"><img src="logo.png" alt="Metapros Logo"></a>
         <nav class="main-nav">
@@ -44,12 +152,14 @@
             <a href="#">Contact</a>
         </nav>
     </header>
+
     <main>
         <section class="hero">
             <h1>Your Expert Digital Library, <span>Instantly</span>.</h1>
             <p>Access curated, high-value knowledge. Build your custom bundle from our expert-written guides and unlock your potential today.</p>
             <a href="bundle.html" class="cta-button">Create Your Bundle Now</a>
         </section>
+
         <section class="section">
             <div class="container">
                 <div class="value-props-grid">
@@ -59,6 +169,7 @@
                 </div>
             </div>
         </section>
+
         <section class="section how-it-works">
             <div class="container">
                 <h2 class="section-title">How It Works</h2>
@@ -69,6 +180,7 @@
                 </div>
             </div>
         </section>
+
         <section class="section final-cta">
             <div class="container">
                 <h2>Ready to Build Your Library?</h2>
@@ -77,8 +189,10 @@
             </div>
         </section>
     </main>
+
     <footer class="main-footer">
         <div class="container"><p>&copy; 2025 METAPROS. All Rights Reserved.</p></div>
     </footer>
+
 </body>
 </html>

@@ -4,60 +4,109 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Create Your Book Bundle - Metapros</title>
+  
   <link rel="icon" type="image/png" href="favicon.png">
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Arimo&family=Spectral&display=swap');
-    body { margin: 0; padding: 0; font-family: 'Arimo', sans-serif; background-color: #111; color: #fff; }
-    .container { max-width: 1000px; margin: 40px auto; padding: 20px; background-color: #1a1a1a; border-radius: 12px; box-shadow: 0 0 15px rgba(212, 172, 13, 0.3); }
-    .back-to-store { margin-bottom: 20px; }
-    .back-to-store a { color: #ccc; text-decoration: none; font-size: 0.95rem; transition: color 0.3s ease; }
-    .back-to-store a:hover { color: #D4AC0D; }
-    h2 { text-align: center; color: #D4AC0D; margin-bottom: 10px; user-select: none; font-family: 'Spectral', serif; }
-    .info-note { text-align: center; color: #ccc; font-size: 0.95rem; margin-bottom: 30px; }
+    :root { 
+        --gold-color: #D4AC0D; 
+        --dark-bg: #111; 
+        --medium-bg: #1a1a1a; 
+        --light-text: #ccc; 
+        --white-text: #fff; 
+        --image-bg: #131211;
+    }
+    body { margin: 0; padding: 0; font-family: 'Arimo', sans-serif; background-color: var(--dark-bg); color: #fff; }
+    .container { max-width: 1000px; margin: 40px auto; padding: 20px; background-color: var(--medium-bg); border-radius: 12px; box-shadow: 0 0 15px rgba(212, 172, 13, 0.3); }
+    
+    /* --- ADDED: Header Styles --- */
+    .main-header { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        padding: 20px 40px; 
+        background-color: #000; 
+        margin-bottom: 40px;
+    }
+    .logo img { 
+        height: 60px; 
+        vertical-align: middle; 
+    }
+    .main-nav a { 
+        color: var(--white-text); 
+        text-decoration: none; 
+        margin: 0 15px; 
+        font-size: 1rem; 
+        font-weight: bold; 
+        transition: color 0.3s ease; 
+    }
+    .main-nav a:hover, .main-nav a.active { 
+        color: var(--gold-color); 
+    }
+
+    h2 { text-align: center; color: var(--gold-color); margin-bottom: 10px; user-select: none; font-family: 'Spectral', serif; }
+    .info-note { text-align: center; color: var(--light-text); font-size: 0.95rem; margin-bottom: 30px; }
     .tabs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 400px; margin: 0 auto 30px auto; user-select: none; }
     .tab { background-color: #333; padding: 18px 0; border-radius: 12px; text-align: center; font-weight: bold; color: #fff; cursor: pointer; transition: all 0.3s ease; font-size: 1.15rem; box-shadow: 0 0 5px transparent; display: flex; align-items: center; justify-content: center; height: 60px; font-family: 'Spectral', serif; }
     .tab:hover { background-color: #b8950b; color: #111; }
-    .tab.active { background-color: #D4AC0D; color: #111; box-shadow: 0 0 14px rgba(212, 172, 13, 0.7); transform: scale(1.1); pointer-events: none; }
+    .tab.active { background-color: var(--gold-color); color: #111; box-shadow: 0 0 14px rgba(212, 172, 13, 0.7); transform: scale(1.1); pointer-events: none; }
     .search-container { margin-bottom: 20px; }
     #searchBar { width: 100%; padding: 12px 15px; background-color: #222; border: 1px solid #444; border-radius: 8px; color: #fff; font-size: 1rem; box-sizing: border-box; transition: all 0.3s ease; }
-    #searchBar:focus { outline: none; box-shadow: 0 0 12px rgba(212, 172, 13, 0.7); border-color: #D4AC0D; }
-    #selectionCounter { text-align: center; color: #D4AC0D; font-size: 1.1rem; margin-bottom: 15px; min-height: 24px; font-weight: bold; }
+    #searchBar:focus { outline: none; box-shadow: 0 0 12px rgba(212, 172, 13, 0.7); border-color: var(--gold-color); }
+    #selectionCounter { text-align: center; color: var(--gold-color); font-size: 1.1rem; margin-bottom: 15px; min-height: 24px; font-weight: bold; }
     .books-section { background-color: #222; border-radius: 12px; padding: 20px; max-height: 420px; overflow-y: auto; box-shadow: 0 0 10px rgba(212, 172, 13, 0.3); }
     .book-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 5px; border-bottom: 1px solid #333; transition: background-color 0.3s ease; }
     .book-item:last-child { border-bottom: none; }
     .book-title { flex: 1; font-size: 1rem; padding-right: 10px; }
-    .select-circle { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #D4AC0D; cursor: pointer; transition: all 0.3s ease; flex-shrink: 0; }
-    .select-circle.selected { background-color: #D4AC0D; box-shadow: 0 0 12px rgba(212, 172, 13, 0.9); }
+    .select-circle { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--gold-color); cursor: pointer; transition: all 0.3s ease; flex-shrink: 0; }
+    .select-circle.selected { background-color: var(--gold-color); box-shadow: 0 0 12px rgba(212, 172, 13, 0.9); }
     input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: none; border-radius: 6px; background-color: #222; color: #fff; font-size: 1rem; transition: box-shadow 0.3s ease; font-family: 'Arimo', sans-serif; box-sizing: border-box; }
     input:focus, textarea:focus { outline: none; box-shadow: 0 0 12px rgba(212, 172, 13, 0.7); }
-    button { width: 100%; padding: 16px; font-size: 1.2rem; font-weight: bold; background-color: #D4AC0D; color: #111; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-family: 'Arimo', sans-serif; }
+    button { width: 100%; padding: 16px; font-size: 1.2rem; font-weight: bold; background-color: var(--gold-color); color: #111; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-family: 'Arimo', sans-serif; }
     button:hover:not(:disabled) { background-color: #b8950b; transform: scale(1.02); }
     button:disabled { background-color: #555; cursor: not-allowed; transform: none; }
-    .secondary-btn { background-color: transparent; color: #D4AC0D; border: 1px solid #D4AC0D; font-size: 0.9rem; padding: 8px; margin-top: -10px; margin-bottom: 15px; font-weight: normal; }
+    .secondary-btn { background-color: transparent; color: var(--gold-color); border: 1px solid var(--gold-color); font-size: 0.9rem; padding: 8px; margin-top: -10px; margin-bottom: 15px; font-weight: normal; }
     .secondary-btn:hover:not(:disabled) { background-color: rgba(212, 172, 13, 0.1); }
     #priceDisplay { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 25px; text-align: center; }
     .price-card { border: 2px solid #444; border-radius: 10px; padding: 15px; transition: all 0.3s ease; }
-    .price-card.highlight { border-color: #D4AC0D; box-shadow: 0 0 20px rgba(212, 172, 13, 0.5); transform: scale(1.05); }
+    .price-card.highlight { border-color: var(--gold-color); box-shadow: 0 0 20px rgba(212, 172, 13, 0.5); transform: scale(1.05); }
     .price-card h4 { margin: 0 0 5px 0; color: #fff; font-family: 'Spectral', serif; font-size: 1.2rem; }
     .price-card .books-count { color: #ccc; font-size: 0.9rem; margin-bottom: 10px; }
-    .price-card .final-price { font-size: 1.8rem; font-weight: bold; color: #D4AC0D; margin-bottom: 10px; }
+    .price-card .final-price { font-size: 1.8rem; font-weight: bold; color: var(--gold-color); margin-bottom: 10px; }
     .price-card .value-prop { font-size: 0.9rem; color: #a0a0a0; min-height: 20px; }
-    .best-value-banner { background-color: #D4AC0D; color: #111; font-weight: bold; font-size: 0.8rem; padding: 3px 8px; border-radius: 5px; display: inline-block; margin-bottom: 10px; }
+    .best-value-banner { background-color: var(--gold-color); color: #111; font-weight: bold; font-size: 0.8rem; padding: 3px 8px; border-radius: 5px; display: inline-block; margin-bottom: 10px; }
     .custom-bundle-note { text-align: center; margin-top: -10px; margin-bottom: 30px; }
     .custom-bundle-note p { font-size: 1rem; color: #ccc; margin: 0; }
-    .custom-bundle-note a { color: #D4AC0D; text-decoration: none; font-weight: bold; transition: color 0.3s ease; }
+    .custom-bundle-note a { color: var(--gold-color); text-decoration: none; font-weight: bold; transition: color 0.3s ease; }
     .custom-bundle-note a:hover { text-decoration: underline; color: #fff; }
-    #thankYouMessage { text-align: center; color: #D4AC0D; display: none; font-size: 1.25rem; opacity: 0; user-select: none; margin-top: 20px; line-height: 1.6; }
+    #thankYouMessage { text-align: center; color: var(--gold-color); display: none; font-size: 1.25rem; opacity: 0; user-select: none; margin-top: 20px; line-height: 1.6; }
     .pop-animation { animation: circle-pop 0.3s ease-in-out; }
     @keyframes circle-pop { 50% { transform: scale(1.4); } }
     @keyframes popIn { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
-    @media (max-width: 768px) { #priceDisplay { grid-template-columns: 1fr; } }
+    
+    @media (max-width: 768px) { 
+        #priceDisplay { grid-template-columns: 1fr; } 
+        .main-header { flex-direction: column; }
+        .main-nav { margin-top: 15px; }
+    }
     @media (max-width: 480px) { .tabs-grid { grid-template-columns: 1fr; } .container { margin: 10px; padding: 15px; } h2 { font-size: 1.5rem; } }
   </style>
 </head>
 <body>
+
+  <header class="main-header">
+    <a href="index.html" class="logo"><img src="logo.png" alt="Metapros Logo"></a>
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="bundle.html" class="active">Create Your Bundle</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+  </header>
+
   <div class="container">
-    <div class="back-to-store"><a href="index.html">‹ Back to Main Store</a></div>
     <h2>Create Your Book Bundle</h2>
     <p class="info-note">Please select at least 3 books to create your bundle.</p>
     <div class="tabs-grid" id="tabsGrid"></div>
@@ -80,6 +129,7 @@
     </form>
     <div id="thankYouMessage"></div>
   </div>
+
   <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwQwlCZoQAAKdTQn5PIOMvj1xXdCnT8dzVaiJ6eFtxEp221tVem9OeJTc7dJS1zLTgq/exec';
     const categories = {
